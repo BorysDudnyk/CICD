@@ -1,0 +1,13 @@
+name: Push Date Info Workflow
+
+on:
+  push:
+
+jobs:
+  get_date_info:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get Date Info
+      run: |
+        date
