@@ -1,0 +1,13 @@
+name: Manual OS Info Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  get_os_info:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get OS Info
+      run: |
+        uname -v
