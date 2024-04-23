@@ -1,0 +1,19 @@
+lane :change_version do
+  increment_version_number(
+      bump_type: "patch" 
+  )
+end
+
+lane :run_script do
+  sh "C:/Users/user/Desktop/script.sh"
+end
+
+lane :prepare_release do
+  build_app(
+      scheme: "AppScheme",
+      workspace: "App.xcworkspace",
+      output_name: "App.ipa",
+      clean: true
+  )
+  puts "Release archive prepared at: #{lane_context[:IPA_OUTPUT_PATH]}"
+end
